@@ -1,0 +1,6 @@
+当一个topic被消费时去删除，只会标记删除，消费端读不到数据warn，但通过-list依然可以看到
+
+标记的mark for deletion 在zk的ls /admin/delete_topics/topicname 节点上
+
+消费的offset保存在Kafka上了，消费数据生成数据连接Kafka节点
+新建，删除，查看详情的topic信息连接zookeeper，这些保存在zookeeper上
