@@ -35,8 +35,8 @@ public class SuspendConsumer {
 		while (true) {
 
 			//poll阻塞：一种阻塞时间到循环，一种来一条数据走一次再阻塞
-            ConsumerRecords<String, String> message = consumer.poll(Long.MAX_VALUE);
-//			ConsumerRecords<String, String> message = consumer.poll(Duration.ofSeconds(1));
+//            ConsumerRecords<String, String> message = consumer.poll(Long.MAX_VALUE);
+			ConsumerRecords<String, String> message = consumer.poll(Duration.ofSeconds(1));
 
 			for (final ConsumerRecord<String, String> record : message) {
 				System.out.println(record.value());
