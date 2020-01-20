@@ -29,6 +29,7 @@ public class ProducterOrderSend {
 //        prop.put("retry.backoff.ms", 500);  //重试间隔时间
 //        prop.put("max.request.size", 10485760);  //每次发送给Kafka服务器请求的最大大小
         prop.put(ProducerConfig.MAX_IN_FLIGHT_REQUESTS_PER_CONNECTION, "1");   //避免消息乱序
+        //表示发送几条确认一次，ack需要时1或者all
         prop.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
         prop.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, "org.apache.kafka.common.serialization.StringSerializer");
 
